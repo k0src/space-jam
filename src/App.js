@@ -14,8 +14,8 @@ function App() {
     const newOrb = {
       id: orbs.length,
       size: Math.random() * 50 + 10,
-      x: Math.random() * 400,
-      y: Math.random() * 400,
+      x: Math.random() * 700, 
+      y: Math.random() * 700,
       dx: (Math.random() - 0.5) * speed,
       dy: (Math.random() - 0.5) * speed,
       color: `hsl(${Math.random() * 360}, 100%, 50%)`,
@@ -129,7 +129,7 @@ function App() {
           value={speed}
           onChange={handleSpeedChange}
         />
-        <button onClick={spawnOrb}>Spawn Orb</button>
+        <button className="spawn-orb-button" onClick={spawnOrb}></button>
       </div>
       <div className="simulation">
         {orbs.map((orb) => (

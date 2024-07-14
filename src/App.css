@@ -1,29 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Forma+DJR+Banner:wght@400&display=swap');
+
 .App {
-  text-align: center;
-  background-color: black;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-image: url('/assets/space.gif');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .controls {
+  margin: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 10px;
+  color: white;
+  font-family: 'Forma DJR Banner', sans-serif;
+}
+
+input[type="range"] {
+  margin-right: 20px;
+}
+
+.spawn-orb-button {
+  width: 50px;
+  height: 50px;
+  background-image: url('/assets/spawn_orb.png');
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.spawn-orb-button:hover {
+  background-image: url('/assets/spawn_orb_hover.png');
 }
 
 .simulation {
   width: 800px;
   height: 800px;
-  background-color: gray;
+  background-image: url('/assets/room.png');
+  background-size: cover;
   position: relative;
+  overflow: hidden;
+  border: 2px solid white;
 }
 
 .orb {
   position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
   border: 2px solid white;
   border-radius: 50%;
 }
