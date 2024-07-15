@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Forma+DJR+Banner:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
 .App {
   display: flex;
@@ -20,11 +20,18 @@
 label {
   margin-right: 10px;
   color: white;
-  font-family: 'Forma DJR Banner', sans-serif;
+  font-family: 'Arimo', sans-serif;
 }
 
 input[type="range"] {
   margin-right: 20px;
+  -webkit-appearance: none;
+  width: 150px; 
+  height: 10px; 
+  background: darkgray;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .15s ease-in-out;
 }
 
 .spawn-orb-button {
@@ -48,7 +55,7 @@ input[type="range"] {
   background-size: cover;
   position: relative;
   overflow: hidden;
-  border: 2px solid white;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
 }
 
 .orb {
@@ -57,4 +64,5 @@ input[type="range"] {
   background-repeat: no-repeat;
   border: 2px solid white;
   border-radius: 50%;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
 }
