@@ -19,7 +19,7 @@ function App() {
       dx: (Math.random() - 0.5) * speed,
       dy: (Math.random() - 0.5) * speed,
       color: `hsl(${Math.random() * 360}, 100%, 50%)`,
-      sound: `/sounds/sound${Math.floor(Math.random() * 5) + 1}.wav`,
+      sound: `/sounds/sound${Math.floor(Math.random() * 20) + 1}.wav`,
       collided: false,
     };
     setOrbs([...orbs, newOrb]);
@@ -27,7 +27,13 @@ function App() {
 
   const playSound = (url, volume) => {
     fetch(url)
-      .then(response => response.arrayBuffer())
+      .then(response => {
+        const ct = response.headers.get('content-type');
+        if (!ct || !ct.includes('audio')) {
+          throw new Error('content type = ' + ct);
+        }
+        return response.arrayBuffer();
+      })
       .then(arrayBuffer => audioContext.current.decodeAudioData(arrayBuffer))
       .then(audioBuffer => {
         const source = audioContext.current.createBufferSource();
