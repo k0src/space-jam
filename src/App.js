@@ -19,7 +19,7 @@ function App() {
       dx: (Math.random() - 0.5) * speed,
       dy: (Math.random() - 0.5) * speed,
       color: `hsl(${Math.random() * 360}, 100%, 50%)`,
-      sound: `/sounds/sound${Math.floor(Math.random() * 20) + 1}.wav`,
+      sound: `${process.env.PUBLIC_URL}/sounds/sound${Math.floor(Math.random() * 20) + 1}.wav`,
       collided: false,
     };
     setOrbs([...orbs, newOrb]);
